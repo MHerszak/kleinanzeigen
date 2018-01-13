@@ -1,0 +1,92 @@
+.accounts-ui{
+  .field{
+    margin-bottom: $vmargin/2;
+  }
+}
+
+.users-menu{
+  .avatar{
+    margin-right: 5px;
+  }
+}
+
+.avatar-initials{
+  background: $light-grey;
+  color: $dark-grey;
+  text-align: center;
+  border-radius: 100%;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{
+    display: block;
+    line-height: 1;
+  }
+}
+
+.users-newsletter-settings {
+  @include flex-center;
+  margin-top: $vmargin;
+}
+
+.log-in-message{
+  h3{
+    text-align: center;
+  }
+}
+
+/// User profile
+
+.list-group-item {
+  //position: relative;
+  //display: block;
+  padding: .0rem 0.0rem;
+  margin-bottom: 1em;
+  //border: 1px solid rgba(0, 0, 0, 0.125);
+  &.post-feed-item {
+    background-color: #fff;
+    //border: 1px solid rgba(0, 0, 0, 0.125);
+  }
+}
+
+.mv {
+  display: flex;
+}
+
+.card-title span {
+  margin: 0 0 0 5px;
+  font-size: 0.7em;
+  color: #ccc;
+}
+
+.testimonial-card {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card .avatar {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  margin: -65px auto 0;
+  overflow: hidden;
+  border: 5px solid #fff;
+}
+
+.testimonial-card .card-body {
+  text-align: center;
+}
+
+.indigo.lighten-1 {
+  background-color: #5c6bc0!important;
+}
+
+.indigo {
+  background-color: #3f51b5!important;
+}
+
+//.aqua-gradient {
+//  background: -webkit-linear-gradient(50deg,#2096ff,#05ffa3);
+//  background: linear-gradient(40deg,#2096ff,#05ffa3);
+//}

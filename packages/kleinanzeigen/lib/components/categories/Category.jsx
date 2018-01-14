@@ -35,7 +35,7 @@ class Category extends PureComponent {
     newQuery.cat = category.slug;
 
     return (
-      <div>
+      <div style={{ display: 'inline-flex' }}>
         <NavItem
           key={category._id}
           tag={Link}
@@ -44,13 +44,15 @@ class Category extends PureComponent {
           {currentCategorySlug === category.slug ? <Components.Icon name="voted"/> :  null}
           {category.name}
         </NavItem>
-        <Components.ShowIf
-          check={Users.isAdmin}
-          // check={Categories.options.mutations.edit.check}
-          document={category}
-        >
-          {this.renderEdit()}
-        </Components.ShowIf>
+        <div className="pull-right">
+          <Components.ShowIf
+            check={Users.isAdmin}
+            // check={Categories.options.mutations.edit.check}
+            document={category}
+          >
+            {this.renderEdit()}
+          </Components.ShowIf>
+        </div>
       </div>
     )
   }

@@ -5,13 +5,14 @@ Package.describe({
   git: 'https://github.com/vulcanjs/vulcan.git'
 });
 
-Package.onUse( function(api) {
+Package.onUse(function(api) {
 
   api.versionsFrom('METEOR@1.0');
 
   api.use([
-    'vulcan:core@1.3.2',
-    'vulcan:forms@1.3.2',
+    'vulcan:core@1.8.3',
+    'vulcan:users@1.8.3',
+    'vulcan:forms@1.8.3',
     'fourseven:scss@4.5.0'
   ]);
 

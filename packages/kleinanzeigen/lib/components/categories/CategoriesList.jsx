@@ -89,11 +89,9 @@ class CategoriesList extends PureComponent {
   };
 
   render() {
-
     const allCategoriesQuery = _.clone(this.props.router.location.query);
     delete allCategoriesQuery.cat;
     const nestedCategories = this.getNestedCategories();
-
     return (
       <Components.ButtonDropdown
         // className="categories-list btn-secondary"

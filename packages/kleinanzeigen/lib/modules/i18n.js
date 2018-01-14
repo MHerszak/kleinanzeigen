@@ -134,6 +134,12 @@ addStrings('en', {
   "companies.search": "Search for a Company",
   "companies.search.btn": "Search Company",
   "companies.location": "Company Address",
+
+  // JObs
+  "jobs.link.jobs": "Jobs",
+  "jobs.created_message": "Your job listing has been created.",
+  "jobs.sign_up_or_log_in_first": "Please sign up or log in first.",
+  "jobs.dateNotDefined": "Date not defined.",
   // Listings actions
   // "listings.create_new": "New Listing",
   // "listings.created": "Listing created",

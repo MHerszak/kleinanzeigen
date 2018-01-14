@@ -19,3 +19,4 @@ export { Categories } from './categories/index';
 export { Comments }  from './comments/index';
 export { Posts }  from './posts/index';
 export { Companies }  from './companies/index';
+export { Jobs }  from './jobs/index';

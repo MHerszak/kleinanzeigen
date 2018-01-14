@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { ButtonDropdown, DropdownToggle } from 'reactstrap'
 
-import { FormattedMessage } from 'meteor/vulcan:i18n';
+// import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 import { Components, registerComponent } from "meteor/vulcan:core";
 
@@ -25,7 +25,7 @@ class ButtonDropdownMH extends PureComponent {
   };
 
   render() {
-    const { title, color, children, ...rest } = this.props;
+    const { title, color, children, tag, ...rest } = this.props;
     return (
       <ButtonDropdown
         isOpen={this.state.isOpen}

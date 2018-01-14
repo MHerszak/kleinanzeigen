@@ -4,13 +4,11 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router';
-
 import { Navbar, Container } from 'reactstrap';
 
 import { Components, registerComponent } from 'meteor/vulcan:core';
 
-// import { FormattedMessage } from 'meteor/vulcan:i18n';
+import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 class SubHeader extends React.Component {
 
@@ -50,9 +48,9 @@ class SubHeader extends React.Component {
       <div className="action-nav">
         <Container>
           <Navbar expand="md">
-            {!this.props.noFilter && <Components.PostsViews />}
+            {/* {!this.props.noFilter && <Components.PostsViews />}
             {!this.props.noFilter && <Components.CategoriesList />}
-            {this.renderSearchForm()}
+            {this.renderSearchForm()} */}
           </Navbar>
         </Container>
       </div>
@@ -60,4 +58,4 @@ class SubHeader extends React.Component {
   }
 }
 
-registerComponent('SubHeader', SubHeader);
+registerComponent('SubHeaderJobs', SubHeader);

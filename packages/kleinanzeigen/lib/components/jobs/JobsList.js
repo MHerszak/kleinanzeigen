@@ -1,14 +1,16 @@
 import React from 'react';
 
-import { Alert } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
+import { Alert } from 'reactstrap'
+
+import { FormattedMessage, intlShape } from 'meteor/vulcan:i18n';
+
 import { Components, registerComponent, withList, withCurrentUser, Utils } from 'meteor/vulcan:core';
 
-import { FormattedMessage } from 'meteor/vulcan:i18n';
-
-import { Companies } from '../../modules/companies/index';
+import { Jobs } from '../../modules/jobs/index.js';
 
 const Error = ({error}) => (
   <Alert className="flash-message" bsStyle="danger">
@@ -16,7 +18,8 @@ const Error = ({error}) => (
   </Alert>
 );
 
-const CompaniesList = (props) => {
+const JobsList = (props) => {
+
   const {
     // className,
     results,
@@ -29,22 +32,25 @@ const CompaniesList = (props) => {
     networkStatus,
     currentUser,
     error,
-    // terms
+    terms
   } = props;
 
-  const renderListItems = document => (
-    <Components.CompaniesItem
-      key={document._id}
+  const renderListItems = (document) => (
+    <Components.JobsItem
       document={document}
+      key={document._id}
       currentUser={currentUser}
+      terms={terms}
+      className="post"
     />
   );
-  
-  const renderMinimumListItems = document => (
-    <Components.CompaniesItemMinimum
-      key={document._id}
+
+  const renderMinimumListItems = (document) => (
+    <Components.JobsItemMinimum
       document={document}
+      key={document._id}
       currentUser={currentUser}
+      terms={terms}
     />
   );
 
@@ -54,11 +60,11 @@ const CompaniesList = (props) => {
     </div>
   );
 
-  const renderPostsNoResults = () => (
-    <div className="posts-list-content">
-      <Components.PostsNoResults />
-    </div>
-  );
+  // const renderPostsNoResults = () => (
+  //   <div className="posts-list-content">
+  //     <Components.PostsNoResults />
+  //   </div>
+  // );
 
   const renderLoading = () => (
     <div className={classNames(props.className, 'posts-list')}>
@@ -72,28 +78,30 @@ const CompaniesList = (props) => {
     <div className={classNames(props.className, 'posts-list')}>
       {props.showHeader && <Components.PostsListHeader />}
       {props.error && <Error error={Utils.decodeIntlError(props.error)} />}
-      {renderPostsNoResults()}
+      {/* {renderPostsNoResults()} */}
     </div>
+  );
+
+  const renderLoadMore = () => (
+    <Components.PostsLoadMore
+      loading={loadingMore}
+      loadMore={props.loadMore}
+      count={props.count}
+      totalCount={props.totalCount}
+    />
   );
 
   const renderResults = () => {
     const hasMore = props.totalCount > props.results.length;
     const renderFuncItem = !props.minimum ? renderListItems : renderMinimumListItems;
     return (
-      <div className={classNames(props.className, 'companies-list', `companies-list-${props.terms.view}`)}>
-        {/*{props.showHeader && <Components.PostsListHeader />}*/}
+      <div className={classNames(props.className, 'jobs-list', `jobs-list-${props.terms.view}`)}>
+        {/* {props.showHeader && <Components.PostsListHeader />} */}
         {props.error && <Error error={Utils.decodeIntlError(error)} />}
-        <div className="companies-list-content">
+        <div className="jobs-list-content">
           {props.results.map(renderFuncItem)}
         </div>
-        {showLoadMore &&
-        hasMore ?
-          <Components.PostsLoadMore
-            loading={loadingMore}
-            loadMore={props.loadMore}
-            count={props.count}
-            totalCount={props.totalCount}
-          /> : !props.minimum && <Components.PostsNoMore />}
+        {showLoadMore && hasMore && renderLoadMore()}
       </div>
     );
   };
@@ -107,12 +115,30 @@ const CompaniesList = (props) => {
   } else {
     return renderNoResults();
   }
+  
+};
+
+JobsList.displayName = "JobsList";
+
+JobsList.propTypes = {
+  results: PropTypes.array,
+  terms: PropTypes.object,
+  hasMore: PropTypes.bool,
+  loading: PropTypes.bool,
+  count: PropTypes.number,
+  totalCount: PropTypes.number,
+  loadMore: PropTypes.func,
+  showHeader: PropTypes.bool,
+};
+
+JobsList.contextTypes = {
+  intl: intlShape
 };
 
 const options = {
-  collection: Companies,
-  queryName: 'companiesListQuery',
-  fragmentName: 'CompaniesList',
+  collection: Jobs,
+  queryName: 'jobsListQuery',
+  fragmentName: 'JobsList',
 };
 
-registerComponent('CompaniesList', CompaniesList, [withList, options], withCurrentUser);
+registerComponent('JobsList', JobsList, withCurrentUser, [withList, options]);

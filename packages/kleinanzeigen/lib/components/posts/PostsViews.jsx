@@ -17,7 +17,7 @@ import Users from 'meteor/vulcan:users';
 const PostsViews = (props) => {
 
   let views = ['top', 'new', 'best'];
-  const adminViews = ['pending', 'rejected', 'scheduled'];
+  const adminViews = ['pending', /* 'rejected', 'scheduled' */];
 
   if (Users.canDo(props.currentUser, 'posts.edit.all')) {
     views = views.concat(adminViews);
@@ -25,11 +25,11 @@ const PostsViews = (props) => {
 
   const query = _.clone(props.router.location.query);
 
-  renderViewsFilter = (view) => {
+  const renderViewsFilter = (view) => {
     return (
       <NavItem key={view}>
         <NavLink to={{ pathname: Utils.getRoutePath('posts.list'), query: { ...query, view: view }}} tag={Link}>
-          <FormattedMessage id={'posts.' + view}/>
+          <FormattedMessage id={'posts.' + view} />
         </NavLink>
       </NavItem>
     );

@@ -19,6 +19,9 @@ addRoute([
   { name:'posts.list',             path: '/',                                  componentName: 'PostsHome' }, // index route
   { name:'posts.single',           path:'posts/:_id(/:slug)',                   componentName: 'PostsSingle' },
 
+  { name:'jobs.list',                path: '/jobs',                            componentName: 'JobsHome' },
+  { name:'jobs.add',                path: '/jobs/add',                            componentName: 'JobsAdd' },
+
   // { name:'sponsor',                path: '/sponsor',                            componentName: 'Sponsor' },
   // { name:'sponsorNewPost',         path: '/sponsor/new(/:postId)',              componentName: 'SponsorNewPost' },
   // { name:'sponsorPickDate',        path: '/sponsor/date/:postId',               componentName: 'SponsorPickDate' },

@@ -79,15 +79,6 @@ class Header extends React.Component {
     });
   };
 
-  // renderPostsNewButton = () => (
-  //   <NavItem>
-  //     <NavLink>
-  //     {/*<NavLink tag={Link} to="/listing/new">*/}
-  //       <Components.PostsNewButton color="success" />
-  //     </NavLink>
-  //   </NavItem>
-  // );
-
   renderCommonNewButton = () => (
     <NavItem>
       <NavLink>
@@ -96,72 +87,35 @@ class Header extends React.Component {
     </NavItem>
   );
 
-  // renderUserMenu = () => (
-  //   <NavItem>
-  //     <Components.UsersMenu />
-  //   </NavItem>
-  // );
-
   renderUserAccountsMenuItem = () => {
     const { currentUser } = this.props;
     return currentUser ? <Components.UsersMenu /> : <UsersAccountMenuButton />;
     // return !currentUser ? <UsersAccountMenuButton /> : <Components.UsersMenu />;
   };
 
-  // renderHowTo = () => {
-  //   // const { currentUser } = this.props;
-  //   return (
-  //     <NavItem>
-  //       <NavLink tag={Link} to="/how-to">
-  //         <Button color="link">Guidelines</Button>
-  //       </NavLink>
-  //     </NavItem>
-  //   );
-  // };
-  //
   renderCompanyLink = () => {
     // const { currentUser } = this.props;
     return (
       <NavItem>
         <NavLink tag={Link} to="/companies">
-          <Button color="link">
-            <FormattedMessage id="companies.link.companies" />
-          </Button>
+          <FormattedMessage id="companies.link.companies" />
         </NavLink>
       </NavItem>
     );
   };
 
-  renderCatList = () => {
+  renderJobsLink = () => {
+    // const { currentUser } = this.props;
     return (
       <NavItem>
-        <NavLink tag="div">
-          <Components.CategoriesList />
+        <NavLink tag={Link} to="/jobs">
+          <FormattedMessage id="jobs.link.jobs" />
         </NavLink>
       </NavItem>
     );
   };
 
-  // renderSearchForm = () => {
-  //   return (
-  //     <NavItem>
-  //       <NavLink tag="div" style={{ width: 600 }}>
-  //         <Components.SearchForm />
-  //       </NavLink>
-  //     </NavItem>
-  //   );
-  // };
-
-  // renderSearchForm = () => {
-  //   return (
-  //     <Col lg={{ size: 8, offset: 2 }} xs={{ size: 8, offset: 2 }} md={{ size: 8, offset: 2 }}>
-  //       <Components.SearchForm />
-  //     </Col>
-  //   )
-  // };
-
   render() {
-    // const { currentUser } = this.props;
     const logoUrl = getSetting('logoUrl');
     const siteTitle = getSetting('title', 'My App');
     const tagline = getSetting('tagline');
@@ -176,23 +130,12 @@ class Header extends React.Component {
             <NavbarToggler onClick={this.toggle} style={{ margin: '0 0 0 auto' }} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav navbar>
-                {/*{this.renderHowTo()}
-                {this.renderAbout()}*/}
-                {this.renderCatList()}
                 {this.renderCompanyLink()}
-                {/*{this.renderSearchForm()}*/}
+                {this.renderJobsLink()}
               </Nav>
               <Nav navbar className="ml-auto">
-                {/*<div className={`col-lg-${currentUser ? 4 : 3} selecttopic col-sm-2 col-md-2`}>*/}
-                {/*{this.renderCatList()}*/}
-                {/*</div>*/}
-                {/*/!*<div className={`col-lg-${currentUser ? 11 : 8} search col-sm-2 col-md-2`}>*/}
-                {/*{this.renderSearch()}*/}
-                {/*</div>*!/*/}
                 <div className="avt">
-                  {/*<div className={`col-lg-${currentUser ? 3 : 2} avt`}>*/}
                   {this.renderCommonNewButton()}
-                  {/*{this.renderPostsNewButton()}*/}
                 </div>
                 {this.renderUserAccountsMenuItem()}
               </Nav>

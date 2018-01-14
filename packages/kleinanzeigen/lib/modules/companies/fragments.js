@@ -1,4 +1,5 @@
 import { registerFragment } from 'meteor/vulcan:core';
+// import { Places } from 'meteor/vulcan:places';
 
 registerFragment(`
   fragment CompaniesList on Company {
@@ -8,7 +9,10 @@ registerFragment(`
     type
     url
     description
-    # users
+    placeId
+    place {
+      ...PlaceItem
+    }
   }
 `);
 

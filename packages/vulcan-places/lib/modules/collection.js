@@ -16,7 +16,7 @@ const Places = createCollection({
 
 Places.addDefaultView(terms => {
   return {
-    options: {sort: {createdAt: -1}}
+    options: { sort: { createdAt: -1 } }
   };
 });
 

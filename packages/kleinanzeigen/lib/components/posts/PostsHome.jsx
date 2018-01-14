@@ -33,6 +33,7 @@ const PostsHome = (props, context) => {
           <Col lg={3} md={3} sm={3} xs={3}>
             <div className="sidebarblock">
               <p>ON THE JOB BOARD</p>
+              <Components.JobsList minimum terms={{ view: 'new' }} />
             </div>
           </Col>
         </Row>

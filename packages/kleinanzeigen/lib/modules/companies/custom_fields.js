@@ -27,4 +27,26 @@ Companies.addField([
       viewableBy: ['guests'],
     }
   },
+  {
+    fieldName: 'place',
+    fieldSchema: {
+      type: String,
+      hidden: true,
+      optional: true,
+      insertableBy: ['members'],
+      editableBy: ['members'],
+      viewableBy: ['guests'],
+      resolveAs: {
+        fieldName: 'place',
+        type: 'Place',
+        resolver: async (place, args, context) => {
+          const { currentUser, Places, Users } = context;
+          if (!place.placeId) return {};
+          const thisPlace = await Places.loader.load(place.placeId);
+          // console.log('thisPlace => ', thisPlace);
+          return Users.restrictViewableFields(currentUser, Places, thisPlace);
+        }
+      }
+    }
+  },
 ]);

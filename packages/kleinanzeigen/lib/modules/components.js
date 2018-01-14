@@ -9,6 +9,7 @@ http://docs.vulcanjs.org/theming.html
 import '../components/common/Footer';
 import '../components/common/Header';
 import '../components/common/SubHeader';
+import '../components/common/SubHeaderJobs';
 import '../components/common/Home';
 import '../components/common/Layout';
 import '../components/common/AdminLayout';
@@ -84,10 +85,19 @@ import '../components/comments/CommentsLoadMore';
 import '../components/companies/CompaniesHome';
 import '../components/companies/CompaniesList';
 import '../components/companies/CompaniesItem';
+import '../components/companies/CompaniesItemMinimum';
 import '../components/companies/CompaniesNewButton';
 import '../components/companies/CompaniesSearchForm';
 import '../components/companies/CompaniesNewForm';
 import '../components/companies/CompaniesSingle';
+
+// Jobs
+import '../components/jobs/JobsItem';
+import '../components/jobs/JobsItemMinimum';
+import '../components/jobs/JobsList';
+import '../components/jobs/JobsHome';
+import '../components/jobs/JobsAdd';
+import '../components/jobs/JobsNewForm';
 // import '../components/listings/ListingsList';
 // import '../components/listings/ListingsMain';
 // import '../components/listings/ListingsNewForm';

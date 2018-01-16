@@ -4,8 +4,6 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router';
-
 import { Navbar, Container } from 'reactstrap';
 
 import { Components, registerComponent } from 'meteor/vulcan:core';

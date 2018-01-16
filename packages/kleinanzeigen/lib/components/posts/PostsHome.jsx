@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Col, Container, Row } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap';
+
+import { isMobile } from 'react-device-detect';
 
 import { Components, registerComponent } from 'meteor/vulcan:core';
 
@@ -10,8 +12,8 @@ const PostsHome = (props, context) => {
   const terms = _.isEmpty(props.location && props.location.query) ? { view: 'new' }: props.location.query;
   return (
     <div>
-      <Components.SubHeader />
-      <div
+      {!isMobile && <Components.SubHeader />}
+      {!isMobile && <div
         style={{ backgroundColor: '#222' }}
         // style={{ backgroundColor: '#222' background: '-webkit-linear-gradient(top, #222 0%,#202020 50%,#222 100%)' }}
       >
@@ -23,14 +25,14 @@ const PostsHome = (props, context) => {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div>}
       <Container style={{ padding: '20px 0' }}>
         <Row>
-          <Col lg={9} md={9} sm={9} xs={9}>
+          <Col lg={9} md={9} sm={12} xs={12}>
             <Components.Newsletter />
             <Components.PostsList terms={terms} />
           </Col>
-          <Col lg={3} md={3} sm={3} xs={3}>
+          <Col lg={3} md={3} sm={12} xs={12} style={{ padding: `${isMobile && '20px 0'}` }}>
             <div className="sidebarblock">
               <p>ON THE JOB BOARD</p>
               <Components.JobsList minimum terms={{ view: 'new' }} />

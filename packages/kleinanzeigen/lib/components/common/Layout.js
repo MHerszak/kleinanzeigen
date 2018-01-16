@@ -12,7 +12,7 @@ import Helmet from 'react-helmet';
 
 import { Container } from 'reactstrap';
 
-import { Components, replaceComponent, withCurrentUser } from 'meteor/vulcan:core';
+import { Components, replaceComponent } from 'meteor/vulcan:core';
 
 const Layout = ({currentUser, children, currentRoute}) => (
   <Container fluid>

@@ -10,6 +10,8 @@ Package.onUse(function (api) {
 
   api.use([
     'vulcan:core@1.8.1',
+
+    'session',
   ]);
 
   api.mainModule('lib/server/main.js', 'server');

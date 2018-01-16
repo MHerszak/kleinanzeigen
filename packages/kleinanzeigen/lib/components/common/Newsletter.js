@@ -10,11 +10,13 @@ import { Button } from 'reactstrap';
 
 import Cookie from 'react-cookie';
 
-import { FormattedMessage, intlShape } from 'meteor/vulcan:i18n';
+import { isMobile } from 'react-device-detect';
+
+import { FormattedMessage, /* intlShape */ } from 'meteor/vulcan:i18n';
 
 import Users from "meteor/vulcan:users";
 
-import { withCurrentUser, registerComponent, Components, getRawComponent, withMutation, withMessages } from 'meteor/vulcan:core';
+import { withCurrentUser, registerComponent, Components, getRawComponent, withMutation, /* withMessages */ } from 'meteor/vulcan:core';
 
 import SimpleSchema from 'simpl-schema';
 
@@ -145,9 +147,9 @@ class SbNewsletter extends PureComponent {
     return (
       <div>
         <div className="newsletter-form-wrapper">
-          <h4 className="newsletter-tagline">
+          {!isMobile && <h4 className="newsletter-tagline">
             <FormattedMessage id="newsletter.subscribe"/>
-          </h4>
+          </h4>}
           {this.props.currentUser ? this.renderButton() : this.renderForm()}
         </div>
         {this.state.error ? this.renderError() : null}

@@ -122,7 +122,7 @@ const schema = {
   },
 
   name: {
-    label: 'Name',
+    label: 'Job Title',
     type: String,
     optional: false,
     viewableBy: ['guests'],
@@ -157,8 +157,8 @@ const schema = {
     control: 'textarea',
     group: formGroups.info,
     searchable: true,
-    limit: 300,
-    max: 300
+    // limit: 300,
+    // max: 300
   },
 
   country: {

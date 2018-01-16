@@ -8,6 +8,7 @@ const PostsFeatured = ({ results, loading, currentUser }) => {
 
   const renderPostItems = (post) => (
     <Components.PostsItemFeatured
+      key={post._id}
       post={post}
       currentUser={currentUser}
       className="posts-item-title"

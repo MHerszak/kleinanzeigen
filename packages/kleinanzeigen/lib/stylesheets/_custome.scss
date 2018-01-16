@@ -94,7 +94,15 @@ ul.socialicons li a:hover {
     padding: 0;
   }
   ul.navbar-nav {
-    margin-left: 15px;
+    margin-left: 38px;
+  }
+  .logo-image {
+    margin-bottom: 3px;
+    small {
+      font-size: 20px;
+      color: #323334;
+      margin-left: 12px;
+    }
   }
 }
 .action-nav {

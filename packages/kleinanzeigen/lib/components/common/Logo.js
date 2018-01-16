@@ -7,9 +7,10 @@ import { registerComponent } from 'meteor/vulcan:core';
 const Logo = ({ height, logoUrl, siteTitle }) => {
   if (logoUrl) {
     return (
-      <h3 className="logo-image ">
+      <h3 className="logo-image">
         <IndexLink to={{ pathname: '/' }}>
           <img src={logoUrl} height={height} alt={siteTitle} />
+          <small>{siteTitle}</small>
         </IndexLink>
       </h3>
     )

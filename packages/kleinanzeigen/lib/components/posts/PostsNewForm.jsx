@@ -13,7 +13,11 @@ import { withRouter } from 'react-router'
 const PostsNewForm = (props, context) => (
   <Components.ShowIf
     check={Posts.options.mutations.new.check}
-    failureComponent={<div><p className="posts-new-form-message"><FormattedMessage id="posts.sign_up_or_log_in_first" /></p><Components.AccountsLoginForm /></div>}
+    failureComponent={<div>
+      <p className="posts-new-form-message">
+        <FormattedMessage id="posts.sign_up_or_log_in_first" /></p>
+        <Components.AccountsLoginForm />
+      </div>}
   >
     <div className="posts-new-form">
       <Components.SmartForm

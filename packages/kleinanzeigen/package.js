@@ -8,7 +8,7 @@ Package.onUse((api) => {
     'fourseven:scss@4.5.0',
 
     // vulcan core
-    'vulcan:core@1.8.0',
+    'vulcan:core@1.8.3',
 
     // vulcan packages
     'vulcan:forms',

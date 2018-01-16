@@ -37,6 +37,12 @@ class SbNewsletter extends PureComponent {
     success: false
   };
 
+  componentDidMount() {
+    this.setState({
+      showBanner: showBanner(this.props.currentUser)
+    });
+  }
+
   componentWillReceiveProps(nextProps, nextContext) {
     if (nextProps.currentUser) {
       this.setState({ showBanner: showBanner(nextProps.currentUser )});

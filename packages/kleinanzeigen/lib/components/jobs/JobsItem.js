@@ -73,7 +73,7 @@ class JobsItem extends PureComponent {
     return (
       <div className="jobs-item">
         <h6 className="posts-item-title">
-          <Link to={Jobs.getLink(document)} target={Jobs.getLinkTarget(document)}>
+          <Link to={Jobs.getLink(document, false, false)} target={Jobs.getLinkTarget(document)}>
             {document.name}
           </Link>
           <small className="posted pull-right">
@@ -122,9 +122,9 @@ class JobsItem extends PureComponent {
   renderPostInfo = () => {
     const { document, currentUser } = this.props;
     return (
-      <div className="prev pull-left" style={{ display: 'flex' }}>
+      <div style={{ display: 'flex' }}>
         {Jobs.options.mutations.edit.check(currentUser, document) && this.renderActions()}
-        {this.props.currentUser && this.props.currentUser.isAdmin && <Components.PostsStats post={document} />}
+        {/* {this.props.currentUser && this.props.currentUser.isAdmin && <Components.PostsStats post={document} />} */}
       </div>
     );
   };
@@ -140,7 +140,6 @@ class JobsItem extends PureComponent {
   render() {
     const { document, className } = this.props;
     const post = document;
-    console.log('document => ', document);
     const postClass = classNames(
       `${className}`, {
         'posts-sponsored': !!post.sponsored,

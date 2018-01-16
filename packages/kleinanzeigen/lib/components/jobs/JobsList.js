@@ -41,7 +41,7 @@ const JobsList = (props) => {
       key={document._id}
       currentUser={currentUser}
       terms={terms}
-      className="post"
+      className="jobs-item"
     />
   );
 

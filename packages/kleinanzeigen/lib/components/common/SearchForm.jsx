@@ -10,7 +10,7 @@ import { intlShape } from 'meteor/vulcan:i18n';
 
 import { registerComponent, Components, Utils } from 'meteor/vulcan:core';
 
-import { withRouter, Link } from 'react-router'
+import { withRouter, Link } from 'react-router';
 
 const Input = FRC.Input;
 

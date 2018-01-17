@@ -37,9 +37,9 @@
 
 .posts-categories{
   margin: 0;
-  &>.posts-category, .categories-dropdown{
-    //margin: 0px 5px 5px 0;
-  }
+  // &>.posts-category, .categories-dropdown{
+  //   margin: 0px 5px 5px 0;
+  // }
   .posts-category, .dropdown-item a{
     //display: inline-block;
     white-space: nowrap;
@@ -58,4 +58,8 @@
       border: 1px solid $dark-grey;
     }
   }
+}
+
+.categories-dropdown-item {
+  margin: 3px 5px;
 }

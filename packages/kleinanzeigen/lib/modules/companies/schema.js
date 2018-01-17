@@ -66,12 +66,13 @@ const schema = {
     control: 'select',
     form: {
       options: [
-        { label: 'NLP', value: 'nlp' },
-        { label: 'Voice', value: 'voice' },
-        { label: 'Vision', value: 'vision' },
-        { label: 'Integrator', value: 'integrator' },
-        { label: 'SaaS', value: 'saas' },
-        { label: 'PaaS', value: 'paas' },
+        { label: 'NLP', value: 'NLP' },
+        { label: 'Voice', value: 'Voice' },
+        { label: 'Vision', value: 'Vision' },
+        { label: 'Integrator', value: 'Integrator' },
+        { label: 'SaaS', value: 'SaaS' },
+        { label: 'PaaS', value: 'PaaS' },
+        { label: 'Research Institute', value: 'Research Institute' },
       ]
     },
     group: formGroups.info
@@ -91,6 +92,11 @@ const schema = {
         { label: 'Automobile', value: 'automobile' },
         { label: 'Software', value: 'software' },
         { label: 'Security', value: 'security' },
+        { label: 'Research', value: 'research' },
+        { label: 'General', value: 'general' },
+        { label: 'Classification', value: 'classification' },
+        { label: 'Imaging', value: 'imaging' },
+        { label: 'FinTech', value: 'fin_tech' },
       ]
     },
     group: formGroups.info

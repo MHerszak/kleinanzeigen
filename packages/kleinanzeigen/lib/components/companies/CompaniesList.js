@@ -62,7 +62,7 @@ const CompaniesList = (props) => {
 
   const renderLoading = () => (
     <div className={classNames(props.className, 'posts-list')}>
-      {props.showHeader && <Components.PostsListHeader />}
+      {/* {props.showHeader && <Components.PostsListHeader />} */}
       {props.error && <Error error={Utils.decodeIntlError(props.error)} />}
       {renderPostLoading()}
     </div>
@@ -70,7 +70,7 @@ const CompaniesList = (props) => {
 
   const renderNoResults = () => (
     <div className={classNames(props.className, 'posts-list')}>
-      {props.showHeader && <Components.PostsListHeader />}
+      {/* {props.showHeader && <Components.PostsListHeader />} */}
       {props.error && <Error error={Utils.decodeIntlError(props.error)} />}
       {renderPostsNoResults()}
     </div>
@@ -83,7 +83,7 @@ const CompaniesList = (props) => {
       <div className={classNames(props.className, 'companies-list', `companies-list-${props.terms.view}`)}>
         {/*{props.showHeader && <Components.PostsListHeader />}*/}
         {props.error && <Error error={Utils.decodeIntlError(error)} />}
-        <div className="companies-list-content">
+        <div className="list companies">
           {props.results.map(renderFuncItem)}
         </div>
         {showLoadMore &&

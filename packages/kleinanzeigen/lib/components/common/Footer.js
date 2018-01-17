@@ -10,11 +10,12 @@ import { Link } from 'react-router';
 
 const Footer = props => 
   <footer className="footer">
+    Build in Edmonton by 
     <Link
       to="http://base2industries.com/"
       target="_blank"
     >
-      <p className="companie-item-name">Base2industries</p>
+      <span className="companie-item-name"> Base2industries</span>
     </Link>
   </footer>
 

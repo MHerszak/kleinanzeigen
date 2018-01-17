@@ -35,7 +35,7 @@ class Category extends PureComponent {
     newQuery.cat = category.slug;
 
     return (
-      <div style={{ display: 'inline-flex' }}>
+      <div className="categories-dropdown-item">
         <NavItem
           key={category._id}
           tag={Link}

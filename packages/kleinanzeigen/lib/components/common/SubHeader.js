@@ -29,16 +29,16 @@ class SubHeader extends React.Component {
       marginLeft: 'auto',
       marginRight: noFilter ? 'auto' : 0,
     };
-    if (collection === 'companies') {
-      return (
-        <div style={styleThis}>
-          <Components.CompaniesSearchForm />
-        </div>
-      )
-    }
+    // if (collection === 'companies') {
+    //   return (
+    //     <div style={styleThis}>
+    //       <Components.CompaniesSearchForm />
+    //     </div>
+    //   )
+    // }
     return (
       <div style={styleThis}>
-        <Components.SearchForm />
+        <Components.SearchForm collection={collection} />
       </div>
     );
   };

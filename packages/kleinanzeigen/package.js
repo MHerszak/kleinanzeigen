@@ -13,7 +13,7 @@ Package.onUse((api) => {
     // vulcan packages
     'vulcan:forms',
     'vulcan:forms-upload',
-    'vulcan:accounts',
+    'vulcan:accounts@2.8.3',
     'vulcan:payments',
     'vulcan:places',
     // 'vulcan:maps',

@@ -2,13 +2,9 @@ import React from 'react';
 
 import { Col, Container, Row } from 'reactstrap'
 
-// import mapProps from 'recompose/mapProps';
-
-import { Components, registerComponent, withCurrentUser, withDocument } from 'meteor/vulcan:core';
+import { Components, registerComponent } from 'meteor/vulcan:core';
 
 import withGATracker from './../hoc/withGATracker';
-
-// import { Companies } from '../../modules/companies/index';
 
 const CompaniesHome = (props) => {
   // const { document: room, documentId, loading, currentUser } = props;

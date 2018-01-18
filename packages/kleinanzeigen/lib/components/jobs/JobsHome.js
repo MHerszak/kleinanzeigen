@@ -10,7 +10,7 @@ const JobsHome = (props, context) => {
   const terms = _.isEmpty(props.location && props.location.query) ? { view: 'new' }: props.location.query;
   return (
     <div>
-      <Components.SubHeaderJobs />
+      <Components.SubHeader noFilter collection="jobs" />
       <Container style={{ padding: '20px 0' }}>
         <Row>
           <Col lg={9} md={9} sm={9} xs={9}>

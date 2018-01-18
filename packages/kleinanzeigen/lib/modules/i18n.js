@@ -140,6 +140,7 @@ addStrings('en', {
   "jobs.created_message": "Your job listing has been created.",
   "jobs.sign_up_or_log_in_first": "Please sign up or log in first.",
   "jobs.dateNotDefined": "Date not defined.",
+  "jobs.search": "Search for Jobs",
   // Listings actions
   // "listings.create_new": "New Listing",
   // "listings.created": "Listing created",

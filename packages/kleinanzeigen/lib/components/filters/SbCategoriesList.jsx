@@ -19,10 +19,8 @@ class SbCategoriesList extends getRawComponent('CategoriesList') {
   }
 
   render() {
-    
     const categories = this.props.results;
-    const currentCategorySlug = this.props.router.location.query && this.props.router.location.query.cat;
-    
+    // const currentCategorySlug = this.props.router.location.query && this.props.router.location.query.cat;
     return (
       <ul className="categories-list">
         {categories && categories.length > 0 ? _.sortBy(categories, "name").map((category, index) => this.renderCategory(category, index)) : null}

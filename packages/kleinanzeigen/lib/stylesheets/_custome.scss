@@ -322,6 +322,9 @@ a.users-delete-link {
   // border-radius: 2px;
   // box-shadow: 0 1px 2px #c9cccd;
   margin-bottom: 20px;
+  p {
+    text-transform: uppercase;
+  }
 }
 
 .sidebarblock h3 {
@@ -493,12 +496,12 @@ td.chbox {
 .post .posttext {
   padding-right: 0px;
   padding-top: 20px;
-  padding-bottom: 15px;
+  // padding-bottom: 15px;
 
   color: #989c9e;
   font-size: 14px;
   font-family: 'Open Sans Light', sans-serif;
-  line-height: 25px;
+  // line-height: 25px;
 }
 
 .post .postimage {
@@ -511,10 +514,10 @@ td.chbox {
   border-left: solid 1px #f1f1f1;
 }
 
-.post .avatar {
-  //width: 37px;
-  //margin-left: 5px;
-}
+// .post .avatar {
+//   //width: 37px;
+//   //margin-left: 5px;
+// }
 
 .post .icons {
   //width: 48px;
@@ -614,9 +617,10 @@ td.chbox {
 
 .postinfobot {
   border-top: solid 1px #f1f1f1;
-  line-height: 50px;
-  padding: 0 30px 0 70px;
-  background-color: #e9ebee;
+  line-height: 30px;
+  padding: 0 30px 0 66px;
+  background-color: #f8f9fa;
+  // background-color: #e9ebee;
 }
 
 

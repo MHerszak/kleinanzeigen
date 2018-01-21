@@ -8,6 +8,10 @@ import React from 'react';
 
 import Users from 'meteor/vulcan:users';
 
+import Tags from 'meteor/vulcan:forms-tags';
+
+import { EmbedlyURL } from 'meteor/vulcan:embed';
+
 Users.addField([
   /**
     Count of the user's posts
@@ -94,19 +98,7 @@ Posts.addField([
       viewableBy: isOwnerOrAdmin,
       insertableBy: ['members'],
       editableBy: ['members'],
-      hidden: true,
-      control: 'checkbox',
-      group: formGroups.admin,
-      onInsert: (post) => {
-        if(!post.sponsoredCandidate) {
-          return false;
-        }
-      },
-      onEdit: (modifier, post) => {
-        if (!modifier.$set.sponsoredCandidate) {
-          return false;
-        }
-      }
+      hidden: true
     }
   },
   {
@@ -130,19 +122,20 @@ Posts.addField([
       insertableBy: ['admins'],
       editableBy: ['admins'],
       viewableBy: ['guests'],
-      group: formGroups.admin,
-      onInsert: (post) => {
-        if(!post.featured) {
-          return false;
-        }
-      },
-      onEdit: (modifier, post) => {
-        if (!modifier.$set.featured) {
-          return false;
-        }
-      }
+      group: formGroups.admin
     }
   },
+  {
+    fieldName: 'categories',
+    fieldSchema: {
+      type: Array,
+      control: Tags,
+      afterComponent: <a target="_blank" className="suggest-category-link" href="mailto:michel.herszak@gmail.com">
+        Suggest new categories
+      </a>
+    }
+  },
+
   {
     fieldName: 'paidAt',
     fieldSchema: {
@@ -170,6 +163,51 @@ Posts.addField([
     }
   },
 
+]);
+
+Posts.addField([
+  {
+    fieldName: 'url',
+    fieldSchema: {
+      control: EmbedlyURL, // we are just extending the field url, not replacing it
+    }
+  },
+  {
+    fieldName: 'thumbnailUrl',
+    fieldSchema: {
+      type: String,
+      optional: true,
+      insertableBy: ['members'],
+      editableBy: ['members'],
+      viewableBy: ['guests'],
+      hidden: true
+    }
+  },
+  {
+    fieldName: 'media',
+    fieldSchema: {
+      type: Object,
+      optional: true,
+      blackbox: true,
+      viewableBy: ['guests'],
+    }
+  },
+  {
+    fieldName: 'sourceName',
+    fieldSchema: {
+      type: String,
+      optional: true,
+      viewableBy: ['guests'],
+    }
+  },
+  {
+    fieldName: 'sourceUrl',
+    fieldSchema: {
+      type: String,
+      optional: true,
+      viewableBy: ['guests'],
+    }
+  }
 ]);
 
 // Posts.removeField("sticky");

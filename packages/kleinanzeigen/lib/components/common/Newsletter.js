@@ -177,8 +177,8 @@ SbNewsletter.contextTypes = {
   currentUser: PropTypes.object
 };
 
-const emailOptions = { name: 'addEmailNewsletter', args: {email: 'String'} };
-const addOptions = { name: 'addUserNewsletter', args: {userId: 'String'} };
+const emailOptions = { name: 'addEmailNewsletter', args: { email: 'String' } };
+const addOptions = { name: 'addUserNewsletter', args: { userId: 'String' } };
 
 // const mutationOptions = {
 //   name: 'addEmailNewsletter',

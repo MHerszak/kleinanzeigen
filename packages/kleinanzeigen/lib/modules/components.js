@@ -122,6 +122,10 @@ import '../components/common/Newsletter';
 // Listings
 // import './../components/listings/ListingPreviewSideNav';
 
+// Filters
+import './../components/filters/SbCategoriesList';
+import './../components/filters/SbFilters';
+
 // Sponsors
 // import '../components/sponsor/_SbSponsor.jsx';
 // import '../components/sponsor/_SbSponsorNewPost.jsx';

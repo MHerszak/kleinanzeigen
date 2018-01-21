@@ -49,7 +49,7 @@ class SubHeader extends React.Component {
         <Container>
           <Navbar expand="md">
             {!this.props.noFilter && <Components.PostsViews />}
-            {!this.props.noFilter && <Components.CategoriesList />}
+            {/* {!this.props.noFilter && <Components.CategoriesList />} */}
             {this.renderSearchForm()}
           </Navbar>
         </Container>

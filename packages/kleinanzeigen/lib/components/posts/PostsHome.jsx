@@ -34,6 +34,8 @@ const PostsHome = (props, context) => {
           </Col>
           <Col lg={3} md={3} sm={12} xs={12} style={{ padding: `${isMobile && '20px 0'}` }}>
             <div className="sidebarblock">
+              <p>STORY FILTER</p>
+              <Components.Filters />
               <p>ON THE JOB BOARD</p>
               <Components.JobsList minimum terms={{ view: 'new' }} />
             </div>

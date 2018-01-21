@@ -37,6 +37,19 @@ const schema = {
     }
   },
 
+  /**
+    Timestamp of post first appearing on the site (i.e. being approved)
+  */
+  foundedAt: {
+    label: 'Founded Date',
+    type: Date,
+    optional: true,
+    viewableBy: ['guests'],
+    insertableBy: ['members'],
+    editableBy: ['members'],
+    control: 'datetime',
+  },
+
   userId: {
     type: String,
     optional: true,
@@ -88,15 +101,21 @@ const schema = {
     control: 'select',
     form: {
       options: [
-        { label: 'Healthcare', value: 'healthcare' },
         { label: 'Automobile', value: 'automobile' },
+        { label: 'Classification', value: 'classification' },
+        { label: 'Electronics', value: 'electronics' },
+        { label: 'FinTech', value: 'fin_tech' },
+        { label: 'General', value: 'general' },
+        { label: 'Healthcare', value: 'healthcare' },
+        { label: 'Hospitality', value: 'hospitality' },
+        { label: 'Imaging', value: 'imaging' },
+        { label: 'Marketing', value: 'marketing' },
+        { label: 'Real Estate', value: 'Real Estate' },
+        { label: 'Research', value: 'research' },
+        { label: 'Robotics', value: 'robotics' },
         { label: 'Software', value: 'software' },
         { label: 'Security', value: 'security' },
-        { label: 'Research', value: 'research' },
-        { label: 'General', value: 'general' },
-        { label: 'Classification', value: 'classification' },
-        { label: 'Imaging', value: 'imaging' },
-        { label: 'FinTech', value: 'fin_tech' },
+        { label: 'Testing', value: 'testing' },
       ]
     },
     group: formGroups.info
@@ -118,7 +137,7 @@ const schema = {
   },
 
   name: {
-    label: 'Name',
+    label: 'Company Name',
     type: String,
     optional: false,
     viewableBy: ['guests'],
@@ -189,20 +208,20 @@ const schema = {
     group: formGroups.address
   },
 
-  address2: {
-    type: String,
-    optional: true,
-    viewableBy: ['guests'],
-    insertableBy: ['members'],
-    editableBy: ['members'],
-    group: formGroups.address
-  },
+  // address2: {
+  //   type: String,
+  //   optional: true,
+  //   viewableBy: ['guests'],
+  //   insertableBy: ['members'],
+  //   editableBy: ['members'],
+  //   group: formGroups.address
+  // },
 
-  geoData: {
-    type: Object,
-    blackbox: true,
-    optional: true,
-  },
+  // geoData: {
+  //   type: Object,
+  //   blackbox: true,
+  //   optional: true,
+  // },
 
   location: {
     type: Object,

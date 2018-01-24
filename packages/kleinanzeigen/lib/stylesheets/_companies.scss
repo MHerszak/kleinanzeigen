@@ -24,6 +24,16 @@
     }
 }
 
+.input-companiesTypes {
+    .col-sm-9{
+        display: flex;
+        flex-wrap: wrap;
+        .checkbox{
+            width: 50%;
+        }
+    }
+}
+
 div.companies {
     &.list {
         margin-bottom: 26px;

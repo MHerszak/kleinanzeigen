@@ -20,5 +20,6 @@ registerFragment(`
   fragment CompaniesPage on Company {
     ...CompaniesList
     description
+    foundedAt
   }
 `);

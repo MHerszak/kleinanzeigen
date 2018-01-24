@@ -137,7 +137,6 @@ class SbFilters extends Component {
   }
 }
 
-
 SbFilters.propTypes = {
   defaultView: PropTypes.string
 }

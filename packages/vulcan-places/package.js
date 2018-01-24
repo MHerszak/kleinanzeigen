@@ -10,9 +10,9 @@ Package.onUse(function(api) {
   api.versionsFrom('METEOR@1.0');
 
   api.use([
-    'vulcan:core@1.8.3',
-    'vulcan:users@1.8.3',
-    'vulcan:forms@1.8.3',
+    'vulcan:core@1.8.5',
+    'vulcan:users',
+    'vulcan:forms',
     'fourseven:scss@4.5.0'
   ]);
 

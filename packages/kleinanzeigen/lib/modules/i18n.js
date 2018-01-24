@@ -9,7 +9,6 @@ http://docs.vulcanjs.org/internationalization.html
 import { addStrings } from 'meteor/vulcan:core';
 
 addStrings('en', {
-  "nav.how_to": "How to Book",
   "nav.about": "About",
 
   "app.noPermission": "You have no permission for this content.",
@@ -113,6 +112,7 @@ addStrings('en', {
 
   "accounts.already_have_an_account": "Already have an account?",
   "accounts.log_in_here": "Log in here",
+  "accounts.login_link": "Login",
   "accounts.dont_have_an_account": "Don\"t have an account?",
   "accounts.sign_up_here": "Sign up here",
 
@@ -128,12 +128,16 @@ addStrings('en', {
 
   // Companies
   "companies.new_post": "Add Company",
+  "companies.edit": "Edit Company",
+  "companies.edit_success": "The company “{name}” has been edited.",
   "companies.created_message": "Add Company",
   "companies.sign_up_or_log_in_first": "Please sign up or log in first.",
   "companies.link.companies": "Companies",
   "companies.search": "Search for a Company",
   "companies.search.btn": "Search Company",
   "companies.location": "Company Address",
+  "companies_types.created_message": "Category “{name}” created.",
+  
 
   // JObs
   "jobs.link.jobs": "Jobs",

@@ -89,8 +89,8 @@ class Header extends React.Component {
 
   renderUserAccountsMenuItem = () => {
     const { currentUser } = this.props;
-    return currentUser ? <Components.UsersMenu /> : <UsersAccountMenuButton />;
-    // return !currentUser ? <UsersAccountMenuButton /> : <Components.UsersMenu />;
+    return currentUser && <Components.UsersMenu />;
+    // return currentUser ? <Components.UsersMenu /> : <UsersAccountMenuButton />;
   };
 
   renderCompanyLink = () => {
@@ -110,6 +110,18 @@ class Header extends React.Component {
       <NavItem>
         <NavLink tag={Link} to="/jobs">
           <FormattedMessage id="jobs.link.jobs" />
+        </NavLink>
+      </NavItem>
+    );
+  };
+
+  renderLoginLink = () => {
+    // const { currentUser } = this.props;
+    if(this.props.currentUser) return null;
+    return (
+      <NavItem>
+        <NavLink tag={Link} to="/log-in">
+          <FormattedMessage id="accounts.login_link" />
         </NavLink>
       </NavItem>
     );
@@ -138,6 +150,7 @@ class Header extends React.Component {
                   {this.renderCommonNewButton()}
                 </div>
                 {this.renderUserAccountsMenuItem()}
+                {this.renderLoginLink()}
               </Nav>
             </Collapse>
             <div className="clearfix"></div>

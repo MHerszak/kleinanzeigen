@@ -64,9 +64,8 @@ Posts.getAuthorName = function (post) {
   var user = Users.findOne(post.userId);
   if (user) {
     return Users.getDisplayName(user);
-  } else {
-    return post.author;
   }
+  return post.author;
 };
 
 /**
@@ -88,7 +87,7 @@ Posts.getDefaultStatus = function (user) {
  * @param {Object} user
  */
 Posts.getStatusName = function (post) {
-  return Utils.findWhere(Posts.statuses, {value: post.status}).label;
+  return Utils.findWhere(Posts.statuses, { value: post.status }).label;
 };
 
 /**
@@ -117,7 +116,7 @@ Posts.checkForSameUrl = function (url) {
 
   // check that there are no previous posts with the same link in the past 6 months
   var sixMonthsAgo = moment().subtract(6, 'months').toDate();
-  var postWithSameLink = Posts.findOne({url: url, postedAt: {$gte: sixMonthsAgo}});
+  var postWithSameLink = Posts.findOne({ url: url, postedAt: { $gte: sixMonthsAgo }});
 
   return !!postWithSameLink;
 };

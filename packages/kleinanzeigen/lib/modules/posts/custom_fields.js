@@ -8,7 +8,7 @@ import React from 'react';
 
 import Users from 'meteor/vulcan:users';
 
-import Tags from 'meteor/vulcan:forms-tags';
+// import Tags from 'meteor/vulcan:forms-tags';
 
 import { EmbedlyURL } from 'meteor/vulcan:embed';
 
@@ -51,7 +51,6 @@ Users.addField([
   }
 ]);
 
-// import Tags from 'meteor/vulcan:forms-tags';
 import { Posts } from './collection';
 
 const formGroups = {
@@ -125,16 +124,16 @@ Posts.addField([
       group: formGroups.admin
     }
   },
-  {
-    fieldName: 'categories',
-    fieldSchema: {
-      type: Array,
-      control: Tags,
-      afterComponent: <a target="_blank" className="suggest-category-link" href="mailto:michel.herszak@gmail.com">
-        Suggest new categories
-      </a>
-    }
-  },
+  // {
+  //   fieldName: 'categories',
+  //   fieldSchema: {
+  //     type: Array,
+  //     control: Tags,
+  //     afterComponent: <a target="_blank" className="suggest-category-link" href="mailto:michel.herszak@gmail.com">
+  //       Suggest new categories
+  //     </a>
+  //   }
+  // },
 
   {
     fieldName: 'paidAt',
@@ -211,6 +210,6 @@ Posts.addField([
 ]);
 
 // Posts.removeField("sticky");
-Users.removeField("notifications_posts");
+Users.removeField('notifications_posts');
 // Users.removeField("bio");
 // Users.removeField("website");

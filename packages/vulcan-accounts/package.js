@@ -1,6 +1,7 @@
 Package.describe({
-  name: 'vulcan:accounts',
-  version: '2.8.3',
+  name: 'vulcan:accountsw',
+  // name: 'vulcan:accounts',
+  version: '1.8.3',
   summary: 'Accounts UI for React in Meteor 1.3+',
   git: 'https://github.com/studiointeract/accounts-ui',
   documentation: 'README.md'

@@ -94,8 +94,6 @@ class CategoriesList extends PureComponent {
     const nestedCategories = this.getNestedCategories();
     return (
       <Components.ButtonDropdown
-        // className="categories-list btn-secondary"
-        // title={React.cloneElement(FormattedMessage, { id: 'categories' })}
         title={<FormattedMessage id="categories"/>}
         id="categories-dropdown"
         color="link"

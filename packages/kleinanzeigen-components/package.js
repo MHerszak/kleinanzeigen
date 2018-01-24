@@ -1,7 +1,7 @@
 Package.describe({
   name: "kleinanzeigen:components",
   summary: "Components for client",
-  version: '1.8.1',
+  version: '1.8.5',
 });
 
 Package.onUse(function (api) {

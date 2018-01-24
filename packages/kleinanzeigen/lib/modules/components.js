@@ -17,6 +17,7 @@ import '../components/common/Vote';
 import '../components/common/SearchForm';
 import '../components/common/Logo';
 import '../components/common/AddButton';
+import '../components/common/TermsPrivacy';
 // import '../components/common/MHMarkdown';
 // import '../components/common/SbPage';
 import '../components/common/BreadCrumbs';
@@ -90,6 +91,11 @@ import '../components/companies/CompaniesNewButton';
 import '../components/companies/CompaniesSearchForm';
 import '../components/companies/CompaniesNewForm';
 import '../components/companies/CompaniesSingle';
+import '../components/companies/CompaniesEditForm';
+
+// CompaniesTypes
+import '../components/companiesTypes/CompaniesTypesListFilter';
+import '../components/companiesTypes/CompaniesTypesNewForm';
 
 // Jobs
 import '../components/jobs/JobsItem';
@@ -123,8 +129,8 @@ import '../components/common/Newsletter';
 // import './../components/listings/ListingPreviewSideNav';
 
 // Filters
-import './../components/filters/SbCategoriesList';
-import './../components/filters/SbFilters';
+import './../components/filters/QCategoriesList';
+import './../components/filters/QFilters';
 
 // Sponsors
 // import '../components/sponsor/_SbSponsor.jsx';
@@ -134,3 +140,6 @@ import './../components/filters/SbFilters';
 
 // Maps
 // import '../components/maps/MyMap';
+
+// Admin
+import '../components/admin/QubitDashboard';

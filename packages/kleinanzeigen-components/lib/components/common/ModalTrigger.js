@@ -3,7 +3,23 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap'
 
+const propTypes = {
+  className: PropTypes.string,
+  label: PropTypes.string,
+  component: PropTypes.object,
+  size: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+};
+
+const defaultProps = {
+  size: 'large'
+};
+
 class ModalTrigger extends PureComponent {
+
+  static propTypes = propTypes;
+  
+  static defaultProps = defaultProps;
 
   state = {
     modalIsOpen: false
@@ -37,8 +53,6 @@ class ModalTrigger extends PureComponent {
           size={this.props.size}
           isOpen={this.state.modalIsOpen}
           toggle={this.toggle}
-          // onHide={this.closeModal}
-          // dialogClassName={this.props.dialogClassName}
         >
           {this.props.title ? this.renderHeader() : null}
           <ModalBody>
@@ -49,18 +63,6 @@ class ModalTrigger extends PureComponent {
     )
   }
 }
-
-ModalTrigger.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  component: PropTypes.object,
-  size: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-};
-
-ModalTrigger.defaultProps = {
-  size: 'large'
-};
 
 replaceComponent('ModalTrigger', ModalTrigger);
 

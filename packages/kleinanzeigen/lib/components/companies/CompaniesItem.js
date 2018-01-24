@@ -10,45 +10,30 @@ import {
 
 import { Components, registerComponent } from 'meteor/vulcan:core';
 
-// import { FormattedMessage } from 'meteor/vulcan:i18n';
+import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 import { Companies } from '../../modules/companies/index';
-
-// const CompaniesItem = ({ document, currentUser }) => {
-  // const renderPlace = () => (
-  //   <p className="companie-item-icon">
-  //     <Components.Icon name="globe" /> {document.place.name}
-  //   </p>
-  // )
-//   return (
-//     <div>
-//       <Card className="companies-listing">
-//         <CardBody>
-//           <CardTitle tag="h5">{document.name}</CardTitle>
-//           <CardText>
-//             <small>Type of business: {document.type}</small>
-//           </CardText>
-//           <CardText>{document.description}</CardText>
-//           <CardText>{document.place.name && renderPlace()}</CardText>
-//           <CardLink
-//             tag={Link}
-//             target={Companies.getLinkTarget(document)}
-//             href={Companies.getLink(document, false, false)}
-//           >
-//             Go to page
-//           </CardLink>
-//         </CardBody>
-//       </Card>
-//     </div>
-//   );
-// }
 
 const CompaniesItem = ({ document, currentUser }) => {
   const renderPlace = () => (
     <small className="companie-item-icon">
       <Components.Icon name="globe" /> {document.place.name}
     </small>
-  )
+  );
+  const renderActions = () => {
+    return (
+      <div className="posts-actions">
+        <Components.ModalTrigger
+          title="Edit your Company"
+          component={
+            <a className="posts-action-edit">
+              <FormattedMessage id="companies.edit" />
+            </a>}>
+          <Components.CompaniesEditForm document={document} />
+        </Components.ModalTrigger>
+      </div>
+    );
+  };
   // console.log(document);
   return (
     <Media className="companies item">
@@ -68,7 +53,10 @@ const CompaniesItem = ({ document, currentUser }) => {
           {document.place.name && renderPlace()}
         </div>
         <div>{document.description}</div>
-        <Badge>{document.type}</Badge>
+        <div style={{ display: 'flex' }}>
+          <Badge>{document.type}</Badge>
+          <span>{Companies.options.mutations.edit.check(currentUser, document) && renderActions()}</span>
+        </div>
       </Media>
     </Media>
   );

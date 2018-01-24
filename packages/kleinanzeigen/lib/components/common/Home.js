@@ -6,8 +6,8 @@ Home
 
 import React from 'react';
 import { Components, registerComponent, withCurrentUser } from 'meteor/vulcan:core';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
-import compose from 'recompose/compose';
+// import { FormattedMessage } from 'meteor/vulcan:i18n';
+// import compose from 'recompose/compose';
 
 
 // import RoomsList from '../rooms/RoomsList';

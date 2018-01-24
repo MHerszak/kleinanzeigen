@@ -91,35 +91,35 @@ const schema = {
     group: formGroups.info
   },
 
-  domain: {
-    label: 'Domain',
-    type: String,
-    optional: false,
-    viewableBy: ['guests'],
-    insertableBy: ['members'],
-    editableBy: ['members'],
-    control: 'select',
-    form: {
-      options: [
-        { label: 'Automobile', value: 'automobile' },
-        { label: 'Classification', value: 'classification' },
-        { label: 'Electronics', value: 'electronics' },
-        { label: 'FinTech', value: 'fin_tech' },
-        { label: 'General', value: 'general' },
-        { label: 'Healthcare', value: 'healthcare' },
-        { label: 'Hospitality', value: 'hospitality' },
-        { label: 'Imaging', value: 'imaging' },
-        { label: 'Marketing', value: 'marketing' },
-        { label: 'Real Estate', value: 'Real Estate' },
-        { label: 'Research', value: 'research' },
-        { label: 'Robotics', value: 'robotics' },
-        { label: 'Software', value: 'software' },
-        { label: 'Security', value: 'security' },
-        { label: 'Testing', value: 'testing' },
-      ]
-    },
-    group: formGroups.info
-  },
+  // domain: {
+  //   label: 'Domain',
+  //   type: String,
+  //   optional: false,
+  //   viewableBy: ['guests'],
+  //   insertableBy: ['members'],
+  //   editableBy: ['members'],
+  //   control: 'select',
+  //   form: {
+  //     options: [
+  //       { label: 'Automobile', value: 'automobile' },
+  //       { label: 'Classification', value: 'classification' },
+  //       { label: 'Electronics', value: 'electronics' },
+  //       { label: 'FinTech', value: 'fin_tech' },
+  //       { label: 'General', value: 'general' },
+  //       { label: 'Healthcare', value: 'healthcare' },
+  //       { label: 'Hospitality', value: 'hospitality' },
+  //       { label: 'Imaging', value: 'imaging' },
+  //       { label: 'Marketing', value: 'marketing' },
+  //       { label: 'Real Estate', value: 'Real Estate' },
+  //       { label: 'Research', value: 'research' },
+  //       { label: 'Robotics', value: 'robotics' },
+  //       { label: 'Software', value: 'software' },
+  //       { label: 'Security', value: 'security' },
+  //       { label: 'Testing', value: 'testing' },
+  //     ]
+  //   },
+  //   group: formGroups.info
+  // },
 
   /**
    URL

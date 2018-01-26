@@ -33,10 +33,10 @@ class SbShare extends Component {
     return (
       <div className="posts-item-share">
         <div className={classNames("posts-item-share-options", {show: this.state.showShareOptions})}>
-          <Components.SbLike collection={Posts} document={this.props.post} currentUser={this.props.currentUser}/>
-          <a href={Posts.getEmailShareUrl(this.props.post)} target="_blank"><Components.Icon name="email"/></a>
+          {/* <Components.MHLike collection={Posts} document={this.props.post} currentUser={this.props.currentUser}/> */}
+          <a href={Posts.getEmailShareUrl(this.props.post)} target="_blank"><Components.Icon name="envelope"/></a>
           <a href={Posts.getTwitterShareUrl(this.props.post)} target="_blank"><Components.Icon name="twitter"/></a>
-          <a href={Posts.getFacebookShareUrl(this.props.post)} target="_blank"><Components.Icon name="facebook"/></a>
+          {/* <a href={Posts.getFacebookShareUrl(this.props.post)} target="_blank"><Components.Icon name="facebook"/></a> */}
         </div>
         <a href="javascript:void(0)" className="posts-item-share-icon" onClick={this.toggleShowShareOptions}><Components.Icon name="more"/></a>
       </div>

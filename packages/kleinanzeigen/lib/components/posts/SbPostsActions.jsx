@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { registerComponent, withCurrentUser, Components, getRawComponent, withEdit } from "meteor/vulcan:core";
-import Tooltip from 'react-bootstrap/lib/Tooltip';
-import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
-import Posts from "meteor/vulcan:posts";
-// import Users from "meteor/vulcan:users";
+import classNames from 'classnames';
+// import Tooltip from 'react-bootstrap/lib/Tooltip';
+// import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
+import { Posts } from "./../../modules";
+import Users from "meteor/vulcan:users";
 // import gql from 'graphql-tag';
+
+const OverlayTrigger = ({ id, component, content }) => (
+  <Components.Tooltip
+    placement="bottom"
+    id={id}
+    component={component}
+    content={content}
+  />
+);
 
 class SbPostsActions extends Component {
 
@@ -40,47 +50,96 @@ class SbPostsActions extends Component {
   }
   
   renderMakePending() {
+    const content = (
+      <a title="Make Pending" onClick={this.makePending} className="posts-action-reject">
+        <Components.Icon name="reject"/>
+      </a>
+    );
     return (
-      <OverlayTrigger placement="bottom" overlay={<Tooltip id="reject-tooltip">Make Pending</Tooltip>}>
-        <a title="Make Pending" onClick={this.makePending} className="posts-action-reject">
-          <Components.Icon name="reject"/>
-        </a>
-      </OverlayTrigger>
-    )
+      <div className={classNames('posts-item-status', `status-${status}`)}>
+        <OverlayTrigger
+          component={<Components.Tooltip id="reject-tooltip">Make Pending</Components.Tooltip>}
+          content={content}
+        />
+      </div>
+    );
+    // return (
+    //   <OverlayTrigger placement="bottom" overlay={<Components.Tooltip id="reject-tooltip">Make Pending</Components.Tooltip>}>
+    //     <a title="Make Pending" onClick={this.makePending} className="posts-action-reject">
+    //       <Components.Icon name="reject"/>
+    //     </a>
+    //   </OverlayTrigger>
+    // )
   }
 
   renderApprove() {
+    const content = (
+      <a title="Approve" onClick={this.approve} className="posts-action-approve">
+        <Components.Icon name="approve"/>
+      </a>
+    );
     return (
-      <OverlayTrigger placement="bottom" overlay={<Tooltip id="approve-tooltip">Approve</Tooltip>}>
-        <a title="Approve" onClick={this.approve} className="posts-action-approve">
-          <Components.Icon name="approve"/>
-        </a>
-      </OverlayTrigger>
-    )
+      <div className={classNames('posts-item-status', `status-${status}`)}>
+        <OverlayTrigger
+          component={<Components.Tooltip id="approve-tooltip">Approve</Components.Tooltip>}
+          content={content}
+        />
+      </div>
+    );
+    // return (
+    //   <OverlayTrigger placement="bottom" overlay={<Components.Tooltip id="approve-tooltip">Approve</Components.Tooltip>}>
+    //     <a title="Approve" onClick={this.approve} className="posts-action-approve">
+    //       <Components.Icon name="approve"/>
+    //     </a>
+    //   </OverlayTrigger>
+    // )
   }
 
   renderFeature() {
+    const content = <a title="Feature" onClick={this.feature} className="posts-action-feature">
+      <Components.Icon name="feature"/>
+    </a>;
     return (
-      <OverlayTrigger placement="bottom" overlay={<Tooltip id="feature-tooltip">Feature</Tooltip>}>
-        <a title="Feature" onClick={this.feature} className="posts-action-feature">
-          <Components.Icon name="feature"/>
-        </a> 
-      </OverlayTrigger>
-    )
+      <div className={classNames('posts-item-status', `status-${status}`)}>
+        <OverlayTrigger
+          component={<Components.Tooltip id="feature-tooltip">Feature</Components.Tooltip>}
+          content={content}
+        />
+      </div>
+    );
+    // return (
+    //   <OverlayTrigger overlay={<Components.Tooltip id="feature-tooltip">Feature</Components.Tooltip>}>
+    //     <a title="Feature" onClick={this.feature} className="posts-action-feature">
+    //       <Components.Icon name="feature"/>
+    //     </a> 
+    //   </OverlayTrigger>
+    // )
   }
 
   renderUnfeature() {
+    const content = (
+      <a title="Unfeature" onClick={this.unfeature} className="posts-action-unfeature">
+        <Components.Icon name="unfeature"/>
+      </a>
+    );
     return (
-      <OverlayTrigger placement="bottom" overlay={<Tooltip id="unfeature-tooltip">Unfeature</Tooltip>}>
-        <a title="Unfeature" onClick={this.unfeature} className="posts-action-unfeature">
-          <Components.Icon name="unfeature"/>
-        </a> 
-      </OverlayTrigger>
-    )
+      <div className={classNames('posts-item-status', `status-${status}`)}>
+        <OverlayTrigger
+          component={<Components.Tooltip id="unfeature-tooltip">Unfeature</Components.Tooltip>}
+          content={content}
+        />
+      </div>
+    );
+    // return (
+    //   <OverlayTrigger placement="bottom" overlay={<Components.Tooltip id="unfeature-tooltip">Unfeature</Components.Tooltip>}>
+    //     <a title="Unfeature" onClick={this.unfeature} className="posts-action-unfeature">
+    //       <Components.Icon name="unfeature"/>
+    //     </a> 
+    //   </OverlayTrigger>
+    // )
   }
 
   renderAdminActions() {
-
     return (
       <span className="posts-item-admin-actions">
         {Posts.isPending(this.props.post) ? 
@@ -88,18 +147,30 @@ class SbPostsActions extends Component {
           this.renderMakePending()
         }
       </span>
-    )
+    );
   }
 
   renderEditLink() {
-
-    const editTrigger = (
-      <OverlayTrigger placement="bottom" overlay={<Tooltip id="edit-tooltip">Edit</Tooltip>}>
-        <a className="edit-link">
-          <Components.Icon name="edit"/>
-        </a>
-      </OverlayTrigger>
+    const content = (
+      <a className="edit-link">
+        <Components.Icon name="edit"/>
+      </a>
     );
+    const editTrigger = (
+      <div className={classNames('posts-item-status', `status-${status}`)}>
+        <OverlayTrigger
+          component={<Components.Tooltip id="edit-tooltip">Edit</Components.Tooltip>}
+          content={content}
+        />
+      </div>
+    );
+    // const editTrigger = (
+    //   <OverlayTrigger placement="bottom" overlay={<Tooltip id="edit-tooltip">Edit</Tooltip>}>
+    //     <a className="edit-link">
+    //       <Components.Icon name="edit"/>
+    //     </a>
+    //   </OverlayTrigger>
+    // );
 
     return (
       <Components.ModalTrigger title="Edit Post" component={editTrigger}>
@@ -113,19 +184,16 @@ class SbPostsActions extends Component {
     return (
       <div className="posts-actions">
 
-        {Posts.options.mutations.edit.check(this.props.currentUser, this.props.post) ? 
-          this.renderEditLink()
-        : null}
+        {Posts.options.mutations.edit.check(this.props.currentUser, this.props.post) && this.renderEditLink()}
 
         {/*
         <a className="posts-action-share"><Components.Icon name="share"/></a>
         */}
-        {/* Users.isAdmin(this.props.currentUser) ? this.renderAdminActions() : null */}
+        {Users.isAdmin(this.props.currentUser) && this.renderAdminActions()}
       </div>
-    )
+    );
   }
-
-};
+}
 
 SbPostsActions.propTypes = {
   post: PropTypes.object.isRequired
@@ -148,4 +216,4 @@ const editOptions = {
 
 registerComponent('SbPostsActions', SbPostsActions, withCurrentUser, [withEdit, editOptions]);
 
-export default withEdit(editOptions)(withCurrentUser(SbPostsActions));
+// export default withEdit(editOptions)(withCurrentUser(SbPostsActions));

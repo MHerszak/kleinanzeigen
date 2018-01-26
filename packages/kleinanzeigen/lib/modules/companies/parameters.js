@@ -74,19 +74,19 @@ addCallback('companies.parameters', addSearchQueryParameter2);
 // }
 // addCallback('companies.parameters', addFiltersParameter);
 
-// function addSwNeParameters (parameters, terms, apolloClient) {
-//
-//   if (terms.sw && terms.ne) {
-//     parameters.selector.location = {
-//       $geoWithin: {
-//         $box: [
-//           [terms.sw.lng, terms.sw.lat],
-//           [terms.ne.lng, terms.ne.lat]
-//         ]
-//       }
-//     }
-//   }
-//
-//   return parameters;
-// }
-// addCallback('companies.parameters', addSwNeParameters);
+function addSwNeParameters (parameters, terms, apolloClient) {
+
+  if (terms.sw && terms.ne) {
+    parameters.selector.location = {
+      $geoWithin: {
+        $box: [
+          [terms.sw.lng, terms.sw.lat],
+          [terms.ne.lng, terms.ne.lat]
+        ]
+      }
+    }
+  }
+
+  return parameters;
+}
+addCallback('companies.parameters', addSwNeParameters);

@@ -180,6 +180,7 @@ const schema = {
     optional: true,
     viewableBy: ['guests'],
   },
+
   userIP: {
     type: String,
     optional: true,
@@ -201,6 +202,7 @@ const schema = {
   pageUrl: {
     type: String,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
       fieldName: 'pageUrl',
       type: 'String',

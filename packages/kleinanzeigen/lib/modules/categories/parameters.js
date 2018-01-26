@@ -4,8 +4,10 @@ Categories parameter
 
 */
 
-import { addCallback, getSetting, registerSetting, getFragment, runQuery } from 'meteor/vulcan:core';
+import { addCallback, getSetting, registerSetting } from 'meteor/vulcan:core';
+
 import gql from 'graphql-tag';
+
 import { Categories } from './collection.js';
 
 registerSetting('forum.categoriesFilter', 'union', 'Display posts belonging to all (“intersection”) or at least one of (“union”) the selected categories');

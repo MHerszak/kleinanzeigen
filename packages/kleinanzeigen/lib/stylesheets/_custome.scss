@@ -38,9 +38,8 @@
 body {
   font-family: 'Open Sans Light', sans-serif;
   font-size: 14px;
-  color: #989c9e;
-  background-color: #e0e6ec;
-  //background-image: url('https://www.talonx.com/file/2013/09/polyagonal-web-design.jpg');
+  // color: #989c9e;
+  background-color: #e3e5e7;
 }
 
 a {
@@ -85,33 +84,45 @@ ul.socialicons li a:hover {
 /*-----------------------------------------------------------------*/
 /*--- Header ---*/
 .headernav {
-  // line-height: 35px;
-  //background-color: #0084d5;
-  //background-color: #7357BF;
-  color: white;
-  //border-bottom: 1px solid #c9cccd;
+  background-color: #008FE4;
+  border-bottom: 1px solid #9aadc1;
+  // background-color: #06A2FF;
+  // background-color: #0084d5;
   .navbar {
     padding: 0;
   }
   ul.navbar-nav {
     margin-left: 38px;
+    li {
+      a {
+        color: #f7f7f7;
+      }
+    }
   }
   .logo-image {
     margin-bottom: 3px;
     small {
       font-size: 20px;
-      color: #323334;
+      color: white;
+      // color: #323334;
       margin-left: 12px;
     }
   }
+  // button {
+  //   color: white;
+  // }
 }
 .action-nav {
   height: 55px;
+  // border-bottom: 1px solid #9aadc1;
   //border-bottom: 1px solid #c9cccd;
   //border-top: 1px solid #c9cccd;
   //background-color: #3a5c9f; // fb blue
-  background-color: #B8C5D5;
+  background-color: #f8f9fa;
   //background-color: #f7f7f7;
+  .form-control {
+    border-radius: 0px;
+  }
 }
 
 
@@ -458,6 +469,7 @@ td.chbox {
 
 /*--- Post --*/
 .post {
+  // background-color: #eceef1;
   background-color: #ffffff;
 
   border-radius: 2px;
@@ -527,7 +539,7 @@ td.chbox {
 }
 
 .post h2 {
-  color: #363838;
+  color: #212529;
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   margin-top: 10px;
@@ -617,7 +629,7 @@ td.chbox {
 
 .postinfobot {
   border-top: solid 1px #f1f1f1;
-  line-height: 30px;
+  line-height: 35px;
   padding: 0 30px 0 66px;
   background-color: #f8f9fa;
   // background-color: #e9ebee;

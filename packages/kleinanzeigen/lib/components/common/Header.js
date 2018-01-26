@@ -134,7 +134,7 @@ class Header extends React.Component {
     return (
       <div className="headernav">
         <Container>
-          <Navbar light expand="md">
+          <Navbar expand="md">
             {logoUrl ? <Components.Logo height={40} logoUrl={logoUrl} siteTitle={siteTitle} /> :
             <NavbarBrand tag={Link} to="/">
               {tagline && <h5 className="tagline">{tagline}</h5>}

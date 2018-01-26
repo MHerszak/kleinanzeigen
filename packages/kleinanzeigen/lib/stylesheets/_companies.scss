@@ -35,25 +35,41 @@
 }
 
 div.companies {
+    
     &.list {
         margin-bottom: 26px;
     }
 
     &.item {
-        margin-bottom: 30px;
+        background-color: #f8f9fa;
+        .meta {
+            margin-top: 5px;
+            .companies-actions {
+                padding-left: 5px;
+                font-size: 11px;
+                line-height: 21px
+            }
+        }
     }
 
-    // div:first-child {
-    //     margin-top: 15px;
-    // }
+    &.item:not(:first-child) {
+        margin: 10px 10px 30px 10px;
+        padding: 10px 10px 10px 10px;
+        // margin-bottom: 30px;
+    }
+    &.item:first-child {
+        margin: 0px 10px 30px 10px;
+        padding: 10px 10px 10px 10px;
+        // margin-bottom: 30px;
+    }
 
-    // div {
-    //     // border: 1px solid #e0e0e0;
-    //     // box-sizing: border-box;
-    //     height: 137px;
-    //     margin: 8px 0;
-    //     position: relative;
-    // }
+    a.companies-name{
+        text-transform: uppercase;
+    }
+
+    .companies-place {
+        margin-left: 10px; 
+    }
 
     div.images {
         background: url(http://via.placeholder.com/90x90);

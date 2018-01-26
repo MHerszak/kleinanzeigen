@@ -10,6 +10,7 @@
   }
   padding-top: $vmargin;
   padding-bottom: $vmargin;
+  
 }
 
 .logo{
@@ -36,6 +37,7 @@
 }
 
 .nav{
+ 
   @include flex-center;
   @include small{
     border-top: 1px solid $medium-grey;

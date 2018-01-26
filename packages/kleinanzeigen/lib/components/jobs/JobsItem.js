@@ -6,6 +6,8 @@ import moment from 'moment';
 
 import { Link } from 'react-router';
 
+import { Badge, Media } from 'reactstrap';
+
 import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
@@ -68,21 +70,25 @@ class JobsItem extends PureComponent {
   //   );
   // };
 
+  renderTitle = (document) => (
+    <div className="jobs-item-title">
+      <h6>
+        {document.name}
+      </h6>
+      <small className="jobs-companie-name">{document.companyName}</small>
+      <small className="posted pull-right">
+        {/*<Components.Icon name="clock-o" />*/}
+        {document.createdAt ? `Posted: ${moment(new Date(document.createdAt)).fromNow()}` : <FormattedMessage id="jobs.dateNotDefined"/>}
+      </small>
+      {document.sponsored && <Link to={'/sponsor'} className="posts-sponsored-marker">Sponsored</Link>}
+      {document.featured && <Link to={Jobs.getLink(document)} className="posts-featured-marker">Featured</Link>}
+    </div>
+  )
+
   renderJobBody = () => {
     const { document } = this.props;
     return (
       <div className="jobs-item">
-        <h6 className="posts-item-title">
-          <Link to={Jobs.getLink(document, false, false)} target={Jobs.getLinkTarget(document)}>
-            {document.name}
-          </Link>
-          <small className="posted pull-right">
-            {/*<Components.Icon name="clock-o" />*/}
-            {document.createdAt ? `Posted: ${moment(new Date(document.createdAt)).fromNow()}` : <FormattedMessage id="jobs.dateNotDefined"/>}
-          </small>
-          {document.sponsored && <Link to={'/sponsor'} className="posts-sponsored-marker">Sponsored</Link>}
-          {document.featured && <Link to={Jobs.getLink(document)} className="posts-featured-marker">Featured</Link>}
-        </h6>
         <p className="posts-item-body">
           {!!document.description && <span className="posts-item-excerpt" dangerouslySetInnerHTML={{ __html: document.description }} />}
           <span className="posts-item-domain">{document.url && `– ${Utils.getDomain(document.url)}`}</span>
@@ -138,23 +144,49 @@ class JobsItem extends PureComponent {
   // );
 
   render() {
-    const { document, className } = this.props;
-    const post = document;
-    const postClass = classNames(
-      `${className}`, {
-        'posts-sponsored': !!post.sponsored,
-        'posts-sticky': post.sticky,
-        'posts-featured': post.featured,
-      }
-    );
+    const { document, /* className */ } = this.props;
+    // const post = document;
+    // const postClass = classNames(
+    //   `${className}`, {
+    //     'posts-sponsored': !!post.sponsored,
+    //     'posts-sticky': post.sticky,
+    //     'posts-featured': post.featured,
+    //   }
+    // );
+    // return (
+    //   <div className={postClass}>
+    //     <div className="topwrap">
+    //       {this.renderJobBody()}
+    //     </div>
+    //     <div className="clearfix"></div>
+    //     {this.renderPostInfo()}
+    //   </div>
+    // );
     return (
-      <div className={postClass}>
-        <div className="topwrap">
-          {this.renderJobBody()}
-        </div>
-        <div className="clearfix"></div>
-        {this.renderPostInfo()}
-      </div>
+      <Media className="companies item">
+        <Media left>
+          <Media className="images" />
+        </Media>
+        <Media body className="text">
+          <Media
+            heading
+            tag={Link}
+            target={Jobs.getLinkTarget(document)}
+            href={Jobs.getLink(document, false, false)}
+            className="companies-name"
+          >
+            {this.renderTitle(document)}
+          </Media>
+          <div>{document.description}</div>
+          {/* <div className="meta" style={{ display: 'flex' }}>
+            <Badge color="warning">{document.type}</Badge>
+            <span className="companies-place">
+              {renderPlace()}
+            </span>
+            <span>{Companies.options.mutations.edit.check(currentUser, document) && renderActions()}</span>
+          </div> */}
+        </Media>
+      </Media>
     );
   }
 }

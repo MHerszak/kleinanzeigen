@@ -62,6 +62,8 @@ import '../components/posts/PostsItemFeatured';
 import '../components/posts/PostsEditForm';
 import '../components/posts/PostsNewForm';
 import '../components/posts/PostsCommentsThread';
+import '../components/posts/SbShare';
+import '../components/posts/MHLike';
 // import '../components/posts/SbPostsItem';
 
 // Category

@@ -40,7 +40,7 @@ addStrings('en', {
   "posts.load_more_days": "Load More Days",
   "posts.no_more": "No more posts.",
   "posts.no_results": "No posts to display.",
-  "posts.search": "Search",
+  "posts.search": "Search for stories in headlines, full-text...",
   "posts.view": "View",
   "posts.top": "Top",
   "posts.new": "New",
@@ -128,13 +128,13 @@ addStrings('en', {
 
   // Companies
   "companies.new_post": "Add Company",
-  "companies.edit": "Edit Company",
+  "companies.edit": "Edit",
   "companies.edit_success": "The company “{name}” has been edited.",
   "companies.created_message": "Add Company",
   "companies.sign_up_or_log_in_first": "Please sign up or log in first.",
   "companies.link.companies": "Companies",
   "companies.search": "Search for a Company",
-  "companies.search.btn": "Search Company",
+  "companies.search.btn": "Search a company by name...",
   "companies.location": "Company Address",
   "companies_types.created_message": "Category “{name}” created.",
   
@@ -144,7 +144,7 @@ addStrings('en', {
   "jobs.created_message": "Your job listing has been created.",
   "jobs.sign_up_or_log_in_first": "Please sign up or log in first.",
   "jobs.dateNotDefined": "Date not defined.",
-  "jobs.search": "Search for Jobs",
+  "jobs.search": "Search for jobs by title",
   // Listings actions
   // "listings.create_new": "New Listing",
   // "listings.created": "Listing created",

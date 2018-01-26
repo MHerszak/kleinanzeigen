@@ -3,9 +3,10 @@
 Categories parameter
 
 */
-
-import { addCallback, getSetting, registerSetting, getFragment, runQuery } from 'meteor/vulcan:core';
 import gql from 'graphql-tag';
+
+import { addCallback, getSetting, registerSetting } from 'meteor/vulcan:core';
+
 import { CompaniesTypes } from './collection.js';
 
 registerSetting('forum.companiesTypesFilter', 'union', 'Display posts belonging to all (“intersection”) or at least one of (“union”) the selected categories');
@@ -47,13 +48,12 @@ function CompaniesTypesParameter(parameters, terms, apolloClient) {
     }
     // get corresponding category ids
     const companiesTypesIds = _.pluck(_.filter(allCompaniesTypes, companiesType => _.contains(companiesTypesSlugs, companiesType.slug)), '_id');
-    const operator = getSetting('forum.categoriesFilter', 'union') === 'union' ? '$in' : '$all';
+    const operator = getSetting('forum.companiesTypesFilter', 'union') === 'union' ? '$in' : '$all';
 
-    // parameters.selector = Meteor.isClient ? {...parameters.selector, 'categories._id': {$in: companiesTypesIds}} : {...parameters.selector, categories: {[operator]: categoriesIds}};
-    parameters.selector = { ...parameters.selector, categories: { [operator]: companiesTypesIds } };
+    parameters.selector = { ...parameters.selector, companiesTypes: { [operator]: companiesTypesIds } };
   }
 
   return parameters;
 }
 
-addCallback('companiesTypes.parameters', CompaniesTypesParameter);
+addCallback('companies.parameters', CompaniesTypesParameter);

@@ -9,14 +9,12 @@ registerFragment(`
     slug
   }
 `);
-
+// CompaniesTypesList
 registerFragment(`
   fragment CompaniesTypesList on CompaniesType {
     # vulcan:companiesTypes
     ...CompaniesTypesMinimumInfo
-    description
     order
-    image
     parentId
     parent {
       ...CompaniesTypesMinimumInfo

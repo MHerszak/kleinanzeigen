@@ -4,7 +4,7 @@ Custom fields on Posts collection
 
 */
 
-import { Companies } from './../../modules';
+import { Companies } from './../../modules/companies/index';
 
 import { getCompaniesAsOptions } from './schema.js';
 

@@ -2,11 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router';
 
-import {
-  Badge,
-
-  Media,
-} from 'reactstrap';
+import { Badge, Media } from 'reactstrap';
 
 import { Components, registerComponent } from 'meteor/vulcan:core';
 
@@ -17,16 +13,16 @@ import { Companies } from '../../modules/companies/index';
 const CompaniesItem = ({ document, currentUser }) => {
   const renderPlace = () => (
     <small className="companie-item-icon">
-      <Components.Icon name="globe" /> {document.place.name}
+      <Components.Icon name="globe" />{document.place.name ? document.place.name : 'No place given'}
     </small>
   );
   const renderActions = () => {
     return (
-      <div className="posts-actions">
+      <div className="companies-actions">
         <Components.ModalTrigger
           title="Edit your Company"
           component={
-            <a className="posts-action-edit">
+            <a className="companies-action-edit">
               <FormattedMessage id="companies.edit" />
             </a>}>
           <Components.CompaniesEditForm document={document} />
@@ -46,15 +42,16 @@ const CompaniesItem = ({ document, currentUser }) => {
           tag={Link}
           target={Companies.getLinkTarget(document)}
           href={Companies.getLink(document, false, false)}
+          className="companies-name"
         >
           {document.name}
         </Media>
-        <div>
-          {document.place.name && renderPlace()}
-        </div>
         <div>{document.description}</div>
-        <div style={{ display: 'flex' }}>
-          <Badge>{document.type}</Badge>
+        <div className="meta" style={{ display: 'flex' }}>
+          <Badge color="warning">{document.type}</Badge>
+          <span className="companies-place">
+            {renderPlace()}
+          </span>
           <span>{Companies.options.mutations.edit.check(currentUser, document) && renderActions()}</span>
         </div>
       </Media>

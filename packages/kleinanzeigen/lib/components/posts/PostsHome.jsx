@@ -13,11 +13,8 @@ const PostsHome = (props, context) => {
   return (
     <div>
       {!isMobile && <Components.SubHeader />}
-      {!isMobile && <div
-        style={{ backgroundColor: '#222' }}
-        // style={{ backgroundColor: '#222' background: '-webkit-linear-gradient(top, #222 0%,#202020 50%,#222 100%)' }}
-      >
-        <Container style={{ padding: '10px 0' }}>
+      {!isMobile && <div className="posts-featured">
+        <Container>
           <Row>
             <Col lg={12} md={12} sm={12} xs={12}>
               <h6>Featured</h6>

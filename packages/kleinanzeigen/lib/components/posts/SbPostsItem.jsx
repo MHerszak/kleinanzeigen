@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tooltip from 'react-bootstrap/lib/Tooltip';
+// import Tooltip from 'react-bootstrap/lib/Tooltip';
 // import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 import classNames from 'classnames';
 import { Link } from 'react-router';
@@ -84,7 +84,7 @@ class SbPostsItem extends getRawComponent('PostsItem') {
     return (
       <div className={postClass}>
 
-        {this.props.index === 0 ? <Components.SbPostsThumbnail post={post} size="medium"/> : null}
+        {this.props.index === 0 ? <Components.PostsThumbnail post={post} size="medium"/> : null}
 
         <div className="posts-item-content">
 

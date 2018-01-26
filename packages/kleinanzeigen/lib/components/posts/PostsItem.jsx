@@ -133,8 +133,9 @@ class PostsItem extends PureComponent {
           {post.postedAt ? `Posted: ${moment(new Date(post.postedAt)).fromNow()}` : <FormattedMessage id="posts.dateNotDefined"/>}
         </div>
 
-        <div className="next pull-right">
+        <div className="next pull-right" style={{ display: 'flex' }}>
           {this.renderCommenters()}
+          <Components.SbShare post={post} currentUser={this.props.currentUser} />
           {/*<a href="#"><i className="fa fa-share"></i></a>
 
             <a href="#"><i className="fa fa-flag"></i></a>*/}

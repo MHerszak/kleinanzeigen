@@ -45,7 +45,7 @@ Categories.getChildren = function (category) {
  * @param {Object} post
  */
 Posts.getCategories = function (post) {
-  return !!post.categories ? Categories.find({_id: {$in: post.categories}}).fetch() : [];
+  return !!post.categories ? Categories.find({ _id: { $in: post.categories }}).fetch() : [];
 };
 /**
  * @summary Get a category's URL

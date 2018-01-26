@@ -421,8 +421,20 @@
 }
 
 .posts-featured{
-  //background-color: #f5e9ae;
-  //margin-bottom: $spacing*2;
+  background-color: inherit;
+  h6 {
+    text-transform: uppercase;
+  }
+  .container {
+    padding-top: 20px;
+  }
+  .posts-item-title {
+    a.card-subtitle  {
+      color: rgb(59, 59, 59);
+      text-transform: uppercase;
+    }
+  }
+  // margin-bottom: $spacing*2;
 }
 
 .posts-item-excerpt{
@@ -470,4 +482,116 @@
 
 .posts-item-loading-footer{
   height: 20px;
+}
+
+//////////////////////////////////////////////////////
+// Like (Upvote)                                    //
+//////////////////////////////////////////////////////
+
+// .like{
+//   .like-button{
+//     display: block;
+//   }
+//   .like-icon{
+//     display: block;
+//     path{
+//       fill: $lightgrey;
+//     }
+//   }
+//   .liked-icon{
+//     display: none;
+//     path{
+//       fill: $pink;
+//     }
+//   }
+//   a:hover{
+//     text-decoration: none;
+//     .icon{
+//       color: $active-color;
+//     }
+//   }
+//   &.voted {
+//     .like-icon{
+//       display: none;
+//     }
+//     .liked-icon{
+//       display: block;
+//     }
+//   }
+// }
+
+//////////////////////////////////////////////////////
+// Share                                            //
+//////////////////////////////////////////////////////
+
+.posts-item-share{
+  position: relative;
+  a{
+    padding: 0 0 0 8px; 
+  }
+}
+
+// .posts-item-share{
+//   position: relative;
+//   border: 1px solid $lightergrey;
+//   border-radius: 3px;
+//   padding: 2px 3px;
+//   a{
+//     display: block;
+//     color: $lighttext;
+//     line-height: 1;
+//   }
+// }
+
+.posts-item-share-icon{
+  path{
+    fill: $lightgrey;
+  }
+  display: block;
+  &:hover{
+    color: #989c9e;
+    // color: $orangered;
+  }
+}
+.posts-item-share-options{
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 100;
+  top: -45px;
+  left: -15px;
+  // padding: 5px;
+  background: black(0.75);
+  border-radius: 3px;
+  box-shadow: 0 3px 7px black(0.15);
+  @include flex-center;
+  justify-content: center;
+  transition: all 300ms ease-in-out;
+  a{
+    color: $white;
+    padding: 5px;
+    &:hover{
+      color: rgb(146, 146, 146);
+      // color: $orangered;
+    }
+  }
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: black(0);
+    border-top-color: black(0.75);
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  &.show{
+    opacity: 1;
+    pointer-events: auto;
+    // top: -55px;
+  }
 }

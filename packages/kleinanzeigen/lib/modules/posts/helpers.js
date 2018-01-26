@@ -77,9 +77,8 @@ Posts.getDefaultStatus = function (user) {
   if (!getSetting('forum.requirePostsApproval', false) || canPostApproved) {
     // if user can post straight to 'approved', or else post approval is not required
     return Posts.config.STATUS_APPROVED;
-  } else {
-    return Posts.config.STATUS_PENDING;
   }
+  return Posts.config.STATUS_PENDING;
 };
 
 /**

@@ -401,6 +401,7 @@ const schema = {
   domain: {
     type: String,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
       type: 'String',
       resolver: (post, args, context) => {
@@ -412,6 +413,7 @@ const schema = {
   pageUrl: {
     type: String,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
       type: 'String',
       resolver: (post, args, context) => {
@@ -423,6 +425,7 @@ const schema = {
   linkUrl: {
     type: String,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
       type: 'String',
       resolver: (post, args, context) => {
@@ -434,6 +437,7 @@ const schema = {
   postedAtFormatted: {
     type: String,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
       type: 'String',
       resolver: (post, args, context) => {
@@ -445,6 +449,7 @@ const schema = {
   commentsCount: {
     type: Number,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
       type: 'Int',
       resolver: (post, args, { Comments }) => {
@@ -457,6 +462,7 @@ const schema = {
   comments: {
     type: Array,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
         arguments: 'limit: Int = 5',
         type: '[Comment]',
@@ -475,6 +481,7 @@ const schema = {
   emailShareUrl: {
     type: String,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
       type: 'String',
       resolver: (post) => {
@@ -486,6 +493,7 @@ const schema = {
   twitterShareUrl: {
     type: String,
     optional: true,
+    viewableBy: ['guests'],
     resolveAs: {
       type: 'String',
       resolver: (post) => {
@@ -497,6 +505,7 @@ const schema = {
   facebookShareUrl: {
     type: String,
     optional: true,
+    viewableBy: ['guests'],    
     resolveAs: {
       type: 'String',
       resolver: (post) => {
